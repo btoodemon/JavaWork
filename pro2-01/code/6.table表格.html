@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 
+			table：表格标签，显示某一班级的学生（多个）信息（多个）
+			table：表格的父级标签，在body中加入table，可以在浏览器上显示出表格的边框
+				width：宽度
+				height：高度
+				border：边框
+				align：表格在浏览器的对齐方式
+			tr：行
+			td：单元格，最小单位，所有需要通过table显示的内容信息，需要加到td
+		 -->
+		<!-- 3行3列表格 -->
+		<table width="200px" height="150px" border="1px" align="center">
+			<tr>
+				<td>1.1</td>
+				<td>1.2</td>
+				<td>1.3</td>
+			</tr>
+			<tr>
+				<td>2.1</td>
+				<td>2.2</td>
+				<td>2.3</td>
+			</tr>
+			<tr>
+				<td>3.1</td>
+				<td>3.2</td>
+				<td>3.3</td>
+			</tr>
+		</table>
+		<!-- 案例：显示3年级2班的学生(3个)信息（姓名、年龄、性别、籍贯） -->
+		<!-- 
+			bgcolor：背景颜色
+			cellpadding： 边框到内容的间距
+			cellspacing：边框到边框的间距
+			bordercolor：边框颜色
+		 -->
+		<table width="300px" border="1px" bgcolor="cornflowerblue" cellpadding="10px" cellspacing="0px" bordercolor="pink">
+			<!-- caption：表格的标题，不是必须的 -->
+			<caption>3年级2班</caption>
+			<!-- thead:表格的头部 -->
+			<thead>
+				<!-- th：设置当前列的标题 -->
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+				<th>籍贯</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>小王</td>
+					<td>22</td>
+					<td>女</td>
+					<td>黑龙江</td>
+				</tr>
+				<tr>
+					<td>小李</td>
+					<td>26</td>
+					<td>男</td>
+					<td>河北</td>
+				</tr>
+				<tr>
+					<td>迪迦</td>
+					<td>5</td>
+					<td>男</td>
+					<td>地球人</td>
+				</tr>
+			</tbody>
+			<!-- <tfoot>
+				<tr>
+					<td><a href="#">首页</a></td>
+				</tr>
+			</tfoot> -->
+		</table>
+		<br />
+		<!-- table有边框，td有边框 -->
+		<table width="300px" border="1px" cellspacing="0px">
+			<!-- 对于tr来讲是不能设置width，可以设置高度 -->
+			<tr height="100px">
+				<!-- 对于td来讲设置height，可以设置宽度 -->
+				<td height="10px" width="50px" align="right">小王</td>
+				<td>22</td>
+				<td>女</td>
+				<td width="150px">黑龙江</td>
+			</tr>
+			<tr>
+				<td>小李</td>
+				<td>26</td>
+				<td>男</td>
+				<td>河北</td>
+			</tr>
+			<tr>
+				<td>迪迦</td>
+				<td>5</td>
+				<td>男</td>
+				<td>地球人</td>
+			</tr>
+		</table>
+		<br />
+		<table width="300px" height="300px" border="1px" cellspacing="0px">
+			<tr>
+				<!-- 合并列：colspan -->
+				<td colspan="2">1 2</td>
+				<!-- <td>2</td> -->
+				<td>3</td>
+			</tr>
+			<tr>
+				<!-- 合并行：rowspan -->
+				<td rowspan="2">4  7</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<!-- <td>7</td> -->
+				<td>8</td>
+				<td>9</td>
+			</tr>
+		</table>
+
+
+
+
+	</body>
+</html>
