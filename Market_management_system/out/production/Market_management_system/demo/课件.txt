@@ -1,0 +1,40 @@
+1.读需求
+2.建库建表
+3.搭建项目框架（mvc）,导入jar
+  com.javasm.entity:实体类，对应到数据库中的表的类
+  com.javasm.util:帮助类，数据库、加密、时间处理
+  com.javasm.constant:常量类，数据库操作的4常量
+  com.javasm.vo:多表联合查询时需要的扩展类
+  com.javasm.dao:数据层的接口，一个表需要对应一个接口
+  com.javasm.dao.impl:数据层的接口对应的实现类，一个表需要对应一个接口的实现类
+  com.javasm.service:业务菜单，一个表对应一个类
+  com.javasm.control:项目菜单
+4.在com.javasm.entity包中加入所有表的实体类
+5.在com.javasm.constant创建数据库的常量类
+6.在com.javasm.util中创建jdbc帮助类
+7.在com.javasm.control中的项目菜单
+  初始化用户信息（管理员、收银员）   登录     显示项目菜单
+
+===========================================================================================
+案例演示：商品管理
+1.在com.javasm.service中创建商品表的菜单类
+2.在com.javasm.dao中定义对该表操作的方法（查询）
+  分页查询数据：List<ProductVO> findProductByPage(Pageinfo page,ProductVO vo);
+  统计总数：Integer countTotal(ProductVO vo);
+3.在com.javasm.dao.impl中实现dao接口中的方法（查询）
+4.实现当前功能的菜单逻辑（查询）
+
+============================================================================================
+购物车+购买管理
+购物车中的商品时临时存储的，购物车中的商品是有多个，购物车变量的数据类型是集合（Map<Integer,ShoppingCart>）
+       Map<Integer,ShoppingCart>:key是商品的编号    value:ShoppingCart商品的购买情况（商品的购买数量，商品的售价[商品价格*商品折扣]）
+购物车的业务处理的类(com.javasm.service)
+        1.向购物车中添加商品
+        2.修改购物车中的购买信息
+        3.删除购物车中的商品
+        4.显示购物车中的信息
+        5.清空购物车中的商品
+结算
+
+
+
