@@ -1,0 +1,165 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#content{
+	
+	width: 867px;
+	/*border: #ff0000 3px solid;*/
+	margin: 0px auto;
+}
+#top{
+	/*border: aqua 3px solid;*/
+	padding-top: 20px;
+	
+	background: url(../img/top-bg.gif) repeat-x;
+}
+#mid{
+	margin-top: 8px;
+	/*border: blueviolet 3px solid;*/
+	height: 181px;
+}
+#bot{
+	/*border: chartreuse 1px solid;*/
+	height: 200px;
+	background-color: #f3f3f3;
+	
+}
+.nav{
+	margin-top: 25px;
+	list-style-type: none;
+	width: 100%;
+	margin-bottom: 5px;
+	
+}
+.nav li{
+	float: left;
+	color: #FFFFFF;
+	width: 100px;
+	height: 26px;
+	text-align: center;
+	padding-top: 1px;
+}
+.botnav{
+	
+	margin-top: 25px;
+	background-image: url(../img/nav-bg.gif);
+	list-style-type: none;
+	width: 100%;
+	margin-bottom: 2px;
+	padding-bottom: 30px;
+	
+}
+.botnav li{
+	float: left;
+	width: 82px;
+	height: 24px;
+	color: #ffffff;
+	text-align: center;
+	padding-top: 3px;
+	
+}
+.ml{
+	/* border: chartreuse 1px solid;*/
+	float: left;
+	width: 360px;
+	height: 100%;
+}
+.mm{
+	/*border: chartreuse 1px solid;*/
+	float: left;
+	width: 310px;
+	height: 100%;
+}
+.mm hr {
+	width= 3px;
+}
+.mm h4 {
+	padding-top: 4px;
+	padding-left: 6px;
+	background-color: #f3f3f3;
+	height: 25px;
+	color: #505050;
+	border-bottom: #505050 1px solid;
+	width: 283px;
+}
+.mm h4 span {
+	margin-left: 160px;
+}
+.mr{
+	/*border: chartreuse 1px solid;*/
+	float: left;
+	width: 197px;
+	height: 100%;
+}
+.tabf{
+	background-color: #f3f3f3;	
+}
+.tabf tr th{
+	color: #505050;
+	border-bottom: 1px #505050 solid;
+	padding: 4px;
+}
+.tabf tr td{
+	font-size: 13px;
+	font-weight: 400;
+	color: #505050;
+	height: 25px;
+	padding: 3px;
+}
+.tabf tr td img{
+	padding-left: 5px;
+	padding-right: 10px;
+}
+.tabm {
+	background-color: #f3f3f3;
+}
+.tabm tr th{
+	color: #505050;
+}
+.tabm tr td {
+	color: #505050;
+	text-align: center;
+	
+	
+}
+.tabm tr td img{
+	padding-top: 12px;
+	padding-left: 4px;
+	padding-bottom: 7px;
+}
+.tabr {
+	background-color: #f3f3f3;
+}
+.tabr tr td{
+	height: 32px;
+	color: #505050;
+}
+.tabr tr td img{
+	padding-top: 9px;
+	padding-left: 8px;
+	padding-bottom: 11px;
+}
+#numred {
+	color: #ad0000;
+	font-weight: 600;
+}
+#butred{
+	color: #FF0000;
+	
+}
+.font7{
+	padding-top: 20px;
+	text-align: center;
+	color: #949494;
+	font-size: 15px;
+}
+.butt{
+	background-image: url(../img/btn.gif);
+	
+	width: 36px;
+	height: 17px;
+	border-width: 0px;
+}
+
+	
