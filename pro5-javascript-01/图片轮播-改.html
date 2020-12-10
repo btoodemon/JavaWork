@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 广告图片轮播切换</title>
+		<link rel="stylesheet" href="css/3style.css" type="text/css">
+	</head>
+
+	<body onload = "begin()">
+		<div class="adver1" id="divb" onmouseover="showlr()" onmouseout="hidelr()">
+			<ul>
+				<li class="chose" onmouseover="fos(0)">1</li>
+				<li class="" onmouseover="fos(1)">2</li>
+				<li class="" onmouseover="fos(2)">3</li>
+				<li class="" onmouseover="fos(3)">4</li>
+				<li class="" onmouseover="fos(4)">5</li>
+				<li class="" onmouseover="fos(5)">6</li>
+			</ul>
+			<div class="" onclick="changepage(1)" >
+			</div>
+			<div class="" onclick="changepage(0)" >
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var imgArr = ["img/adver00.jpg","img/adver01.jpg","img/adver02.jpg","img/adver03.jpg","img/adver04.jpg","img/adver05.jpg"]
+		var objadver = document.getElementById("divb");
+		var chidiv = objadver.children;
+		var objli = chidiv[0].children; //第一个孩子是ul标签
+		var left = chidiv[1]; //左边div
+		var right = chidiv[2]; //右边div
+		var num = 0;
+		//启动
+		/* setTimeout(begin, 1000); */
+		//开始循环
+		function begin() {
+			timeid = setInterval(auto, 2500);
+		}
+		//下标递增,到顶归0;
+		function auto(){
+			change();
+			num++;
+			if(num==6){
+				num=0;
+			}
+		}
+		function fos(n) {
+			num=n;
+			change();
+		}
+	
+		//根据下标改变显示
+		function change() {
+			objadver.setAttribute("style","background: url(" +imgArr[num]+");")			
+			for (var i = 0; i < objli.length; i++) {
+				if(i==num){
+					objli[i].setAttribute("class","chose")
+				}else{
+					objli[i].setAttribute("class","")
+					
+				}
+				
+			}
+		}
+		//显示上下页按钮
+		function showlr() {
+			left.setAttribute("class", "arrowLeft");
+			left.innerHTML = "<";
+			right.setAttribute("class", "arrowRight");
+			right.innerHTML = ">";
+		}
+		//隐藏上下页按钮
+		function hidelr() {
+			left.setAttribute("class", "");
+			left.innerHTML = "";
+			right.setAttribute("class", "");
+			right.innerHTML = "";
+		}
+		function changepage(n){
+			clearInterval(timeid);
+			if(n==0){
+				num++;
+				if(num==6){
+					num=0;
+				}
+				change();
+			}else{
+				num--;
+				if(num==-1){
+					num=5;
+				}
+				change();
+			}
+			begin();
+		}
+
+	</script>
+</html>

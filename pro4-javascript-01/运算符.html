@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var numberStr = prompt("请输入一个四位数","1539")
+			var number = parseInt(numberStr);
+			var sum = parseInt(number/1000);  
+			sum+= parseInt(number%1000/100);
+			sum+= parseInt(number%100/10);
+			sum+= parseInt(number%10);
+			document.write(number+"各个位求和:"+sum);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

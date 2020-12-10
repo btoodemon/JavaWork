@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function add(){
+				var addhere = document.getElementById("addhere");
+				
+				var newadd = document.createElement("input");
+				newadd.type = "button";
+				newadd.value = "新的按钮"
+				
+				addhere.appendChild(newadd);
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="addhere" >
+			<li >test1</li>
+			<li>test2</li>
+		</ul>
+		
+		<input type="button" name="add" id="add" value="添加按钮" onclick="add()"/>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var count = 1;
+			var comleft1 = 0;
+			var comleft2 = 0;
+			var comleft3 = 0;
+			var config = true;
+			var id;
+
+			function play() {
+				var img1 = document.getElementById("img1");
+				var img2 = document.getElementById("img2");
+				var img3 = document.getElementById("img3");
+				var str = "img/pic" + count.toString() + ".png";
+				img1.setAttribute("src", str);
+				img2.setAttribute("src", str);
+				img3.setAttribute("src", str);
+				var str2 = "margin-left:" + comleft1.toString() + "px;"
+				var str3 = "margin-left:" + comleft2.toString() + "px;"
+				var str4 = "margin-left:" + comleft3.toString() + "px;"
+				img1.setAttribute("style", str2)
+				img2.setAttribute("style", str3)
+				img3.setAttribute("style", str4)
+
+				comleft1 += 5;
+				comleft2 += 20;
+				comleft3 += 10;
+				count++;
+				if (count == 9) {
+					count = 1;
+				}
+				if (comleft1 == 1200) {
+					document.getElementById("num1").innerHTML = "一号获胜";
+					config = false;
+				}
+				if (comleft2 == 1200){
+					document.getElementById("num2").innerHTML = "二号获胜";
+					config = false;
+				}
+				if (comleft3 == 1200){
+					document.getElementById("num3").innerHTML = "三号获胜";
+					config = false;
+				}
+				if(config){
+					id = setTimeout(play, 80);
+				}
+			}
+
+			function stop() {
+				clearTimeout(id);
+			}
+		</script>
+	</head>
+	<body>
+		<table border="1px" cellspacing="0px">
+			<tr>
+				<td id="num1">一号选手</td>
+				<td width="1300px"><img id="img1" src="img/pic1.png" style=""></td>
+				
+			</tr>
+			<tr>
+				<td id="num2">二号选手</td>
+				<td width="1300px"><img id="img2" src="img/pic1.png" style=""></td>
+			</tr>
+			<tr>
+				<td id="num3">三号选手</td>
+				<td width="1300px"><img id="img3" src="img/pic1.png" style=""></td>
+			</tr>
+		</table>
+
+		<input type="button" name="begin" id="begin" value="开始播放" onclick="play()" />
+		<input type="button" name="stop" id="stop" value="停止播放" onclick="stop()" />
+
+	</body>
+</html>

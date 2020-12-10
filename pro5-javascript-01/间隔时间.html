@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function show() {
+				var date = new Date();
+				document.getElementById("ti").innerHTML = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() +
+					" " + date.getHours() + ":" + date.getMinutes() + ":" +
+					date.getSeconds();
+					setTimeout(show, 1000);
+			}
+			setTimeout(show, 1000);
+			function show1(){
+				var date = new Date();
+				document.getElementById("time").innerHTML = date;
+			}
+			setInterval("show1()",1000);
+			
+		</script>
+	</head>
+	<body>
+		<font id="ti" size="5px" color="black"></font><br/>
+		<font id="time" size="5px" color="black"></font>
+	</body>
+</html>

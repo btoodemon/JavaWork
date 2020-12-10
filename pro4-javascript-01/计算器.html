@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			input[type='text'] {
+				height: 20px;
+				width: 244px;
+				padding-top: 4px;
+			}
+			
+			.btn{
+				width: 60px;
+				height: 60px;
+			}
+			
+			.btn1{
+				width: 120px;
+				height: 60px;				
+			}
+		</style>
+		<script type="text/javascript">
+			function add(numstr){
+				var shownow = document.getElementById("show1")
+				shownow.value =  shownow.value.concat(numstr)
+				
+				
+			}
+			function sumall(){
+				var sum = document.getElementById("show1")
+				var result = eval(sum.value);
+				var resultnow =  document.getElementById("show2");
+				resultnow.value = result;
+				
+			}
+			function clean(){
+				document.getElementById("show1").value = "";
+				document.getElementById("show2").value = "";
+			}
+			
+		
+		</script>
+	</head>
+	<body>
+		<div style="height: 392px;width: 259px; margin: 200px auto;border: #7d7d7d 5px solid;">
+		<h2 style="color: dimgray; text-align: center;">计&nbsp;&nbsp;算&nbsp;&nbsp;机 <input type="button" name="res" id="res" value="C" onclick="clean()"/ style="vertical-align:4px"> </h2>
+		<table>
+			<tr>
+				<td colspan="4">
+					<input type="text" id="show1" value=""/>
+					<br />
+					<input type="text" id="show2" value=""/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="button" value="1" class="btn" onclick="add(1)"/>
+				</td>
+				<td>
+					<input type="button" value="2" class="btn" onclick="add(2)"/>
+				</td>
+				<td>
+					<input type="button" value="3" class="btn" onclick="add(3)"/>
+				</td>
+				<td>
+					<input type="button" value="+" class="btn" onclick="add('+')"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="button" value="4" class="btn" onclick="add(4)"/>
+				</td>
+				<td>
+					<input type="button" value="5" class="btn" onclick="add(5)"/>
+				</td>
+				<td>
+					<input type="button" value="6" class="btn" onclick="add(6)"/>
+				</td>
+				<td>
+					<input type="button" value="-" class="btn" onclick="add('-')"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="button" value="7" class="btn" onclick="add(7)"/>
+				</td>
+				<td>
+					<input type="button" value="8" class="btn" onclick="add(8)"/>
+				</td>
+				<td>
+					<input type="button" value="9" class="btn" onclick="add(9)"/>
+				</td>
+				<td>
+					<input type="button" value="/" class="btn" onclick="add('/')"/>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="button" value="0" class="btn1" onclick="add(0)"/>
+				</td>
+				<td>
+					<input type="button" value="=" class="btn" onclick="sumall()"/>
+				</td>
+				<td>
+					<input type="button" value="*" class="btn" onclick="add('*')"/>
+				</td>
+			</tr>
+		</table>
+		</div>
+	</body>
+</html>

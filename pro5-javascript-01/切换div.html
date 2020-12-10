@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#divb {
+				border: 1px #5F9EA0 solid;
+				width: 400px;
+				height: 150px;
+				
+			}
+			.ta {
+				border: 1px #cfcfcf solid;
+				float: left;
+				width: 46px;
+				height: 24px;
+				margin-top: 10px;
+				margin-left: 10px;
+				text-align: center;
+				color: #393939;
+			}
+			#div3 {
+				border: 1px #CFCFCF solid;
+				margin-top: 36px;
+				margin-left: 10px;
+				width: 375px;
+				height: 100px;
+			}
+		</style>
+		<script type="text/javascript">
+			function change(num){
+				var objdiv3 = document.getElementById("div3");
+				objdiv3.innerHTML = "第一个容器的内容";
+				var objdiv1 = document.getElementById("div1");
+				var objdiv2 = document.getElementById("div2");
+				objdiv1.setAttribute("style","background-color: #CFCFCF;");
+				objdiv2.setAttribute("style","background-color: #ffffff;");
+				if(num == 2){
+					objdiv3.innerHTML = "第二个容器的内容";
+					objdiv1.setAttribute("style","background-color: #ffffff;");
+					objdiv2.setAttribute("style","background-color: #CFCFCF;");
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div id="divb">
+			<div id="div1" class="ta" onmouseover="change(1)">
+				tab1
+			</div>
+			<div id="div2" class="ta" onmouseover="change(2)">
+				tab2
+			</div>
+			<div id="div3">
+				
+			</div>
+		</div>
+	</body>
+</html>

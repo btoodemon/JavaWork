@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 广告图片轮播切换</title>
+		<link rel="stylesheet" href="css/3style.css" type="text/css">
+	</head>
+
+	<body>
+		<div class="adver1" id="divb" onmousemove="showlr()" onmouseleave="hidelr()">
+			<ul>
+				<li class="chose" onmouseover="fos(0)" onmouseleave="leave(0)">1</li>
+				<li class="" onmouseover="fos(1)" onmouseleave="leave(1)">2</li>
+				<li class="" onmouseover="fos(2)" onmouseleave="leave(2)">3</li>
+				<li class="" onmouseover="fos(3)" onmouseleave="leave(3)">4</li>
+				<li class="" onmouseover="fos(4)" onmouseleave="leave(4)">5</li>
+				<li class="" onmouseover="fos(5)" onmouseleave="leave(5)">6</li>
+			</ul>
+			<div class="" onmousedown="changepage(-2)" >
+			</div>
+			<div class="" onmousedown="changepage(0)" >
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var countnow = 0;
+		var countpas = 5;
+		var timeid;
+		var objadver = document.getElementById("divb");
+		var chidiv = objadver.children;
+		console.log(chidiv);
+		var objli = chidiv[0].children; //第一个孩子是ul标签
+		var objleft = chidiv[1]; //左边div
+		console.log(objleft);
+		var objright = chidiv[2]; //右边div
+		function autochange() {
+			console.log(countnow);
+			objadver.setAttribute("style", "background: url(img/adver0" + countnow + ".jpg);");
+			objli[countpas].setAttribute("class", "");
+			objli[countnow].setAttribute("class", "chose")
+			countpas = countnow;
+			countnow++;
+			if (countnow == 6) {
+				countnow = 0;
+			}
+		}
+
+		function begin() {
+			timeid = setInterval(autochange, 2500);
+		}
+		setTimeout(begin, 20);
+
+		function fos(num) {
+			objadver.setAttribute("style", "background: url(img/adver0" + num + ".jpg);");
+			objli[countpas].setAttribute("class", "")
+			objli[num].setAttribute("class", "chose")
+
+			clearInterval(timeid);
+		}
+
+		function leave(num) {
+			objadver.setAttribute("style", "background: url(img/adver0" + countpas + ".jpg);");
+			objli[num].setAttribute("class", "")
+			objli[countpas].setAttribute("class", "chose")
+			begin();
+		}
+
+		function showlr() {
+			objleft.setAttribute("class", "arrowLeft");
+			objleft.innerHTML = "<";
+			objright.setAttribute("class", "arrowRight");
+			objright.innerHTML = ">";
+			clearInterval(timeid);
+		}
+
+		function hidelr() {
+			objleft.setAttribute("class", "");
+			objleft.innerHTML = "";
+			objright.setAttribute("class", "");
+			objright.innerHTML = "";
+			setTimeout(begin, 5000);
+		}
+
+		function changepage(changenum) {
+			clearInterval(timeid);
+			countnow += changenum;
+			if (countnow < 0) {
+				countnow = 5;
+				console.log(countnow);
+				objadver.setAttribute("style", "background: url(img/adver0" + countnow + ".jpg);");
+				objli[countpas].setAttribute("class", "");
+				objli[countnow].setAttribute("class", "chose")
+				countpas = countnow;
+				countnow++;
+
+			} else if (countnow == 4 && changenum == -2) {
+				console.log(countnow);
+				objadver.setAttribute("style", "background: url(img/adver0" + countnow + ".jpg);");
+				objli[countpas].setAttribute("class", "");
+				objli[countnow].setAttribute("class", "chose")
+				countpas = countnow;
+				countnow++;
+			} else {
+				autochange();
+			}
+		}
+	</script>
+</html>

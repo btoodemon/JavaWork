@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#table tr th{				
+				width: 90px;				
+			}
+		</style>
+
+		<script type="text/javascript">
+			var count = 1;
+			function add(){
+				var username = document.getElementById("name").value;
+				var userage = document.getElementById("age").value;
+				
+				var table = document.getElementById("table");
+				var trs = table.rows;
+				var cells = trs[0].cells;
+				
+				var createTr = table.insertRow();
+				
+				var createTd1 = createTr.insertCell();
+				createTd1.innerHTML = count;
+				
+				var createTd2 = createTr.insertCell();
+				createTd2.innerHTML = username;
+				
+				var createTd3 = createTr.insertCell();
+				createTd3.innerHTML = userage;
+				count++;
+			}
+			
+			function del(){
+				var table = document.getElementById("table");
+				var num = table.rows.length-1;
+				if(num>0){
+					table.deleteRow(num);
+					count--;
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<table id="table" border="1px" cellspacing="0px" cellpadding="2px">
+			<input id="name" type="text" name="name" id="name" value="" /><br/>
+			<input id="age" type="text" name="age" id="age" value="" /><br/>
+			<input type="button" name="add" id="add" value="添加" onclick="add()"/>
+			<input type="button" name="del" id="del" value="删除" onclick="del()"/>
+			<tr>
+				<th>编号</th>
+				<th>姓名</th>
+				<th>年龄</th>
+			</tr>
+		</table>
+	</body>
+</html>
