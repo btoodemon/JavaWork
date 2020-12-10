@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#div>p>span").css("background-color","blue");
+				$("h2+p~p").css("color","blue");
+				$("h4:last").css("background-color","blue");
+			});
+		</script>
+	</head>
+	<body>
+		<div id="div" style="margin: 0 auto;width: 300px;height: 400px; border: 1px cornflowerblue solid;">
+			<h2>全部旅游产品分类</h2>
+			<p>北京周边旅游<span>特价</span></p>
+			<p>按天数 海边旅游 草原</p>
+			<h4>景点门票</h4>
+			<p>名胜 暑期 乐园</p>
+			<p>山水 双休</p>
+			<h4>更多分类</h4>
+		</div>
+	</body>
+</html>

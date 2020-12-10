@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>制作YY安全中心登录框特效 </title>
+		<script type="text/javascript" src="./js/jquery-3.2.1.js"></script>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+				font-size: 12px;
+			}
+
+			#login {
+				position: relative;
+				height: 282px;
+				width: 494px;
+				background: url(images/bg.jpg) no-repeat;
+			}
+
+			#login input.text {
+				position: absolute;
+				height: 26px;
+				line-height: 26px;
+				color: #999;
+				width: 207px;
+			}
+
+			.username {
+				left: 183px;
+				top: 105px;
+			}
+
+			.passwrd {
+				left: 183px;
+				top: 145px;
+			}
+
+			input.btn {
+				position: absolute;
+				left: 183px;
+				top: 190px;
+				height: 32px;
+				line-height: 32px;
+				width: 100px;
+				background: url(images/btn.jpg) no-repeat;
+				border: none;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function() {
+				$(".username").focus(function() {
+					$(this).attr("value", "");
+				}).focusout(function() {
+					if ($(this).val() == "") {
+						$(this).attr("value", "通行账号/邮箱");
+					}
+				});
+
+				$(".passwrd").focus(function() {
+					$(this).attr("value", "");
+				}).focusout(function() {
+					if ($(this).val() == "") {
+						$(this).attr("value", "密码");
+					}
+				});
+				
+				$(":submit").submit(function(){
+					return check();
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<div id="login">
+			<form>
+				<input type="text" name='username' class='text username' value="通行账号/邮箱" />
+				<input type="text" name='passwrd' class='text passwrd' value="密码" />
+				<input type="submit" name='sub' class='btn' value=" " />
+			</form>
+		</div>
+
+	</body>
+</html>
